@@ -106,6 +106,10 @@ Try sending an example message using curl::
 
   curl -XPOST http://graylog.example.org:12202/gelf -p0 -d '{"short_message":"Hello there", "host":"example.org", "facility":"test", "_foo":"bar"}'
 
+Or using Powershell::
+
+ Invoke-RestMethod -Method Post -Uri 'http://graylog.ardencompanies.com:12201/gelf' -Body '{"short_message":"Hello there", "host":"example.org", "facility":"test", "_foo":"bar"}'
+
 Both keep-alive and compression are supported via the common HTTP headers. The server will return a ``202 Accepted`` when the message
 was accepted for processing.
 
